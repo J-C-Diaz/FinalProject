@@ -3,4 +3,12 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="today">#4b82ff</color>
+	<color name="greyed_out">#c7c7c7</color>
+
+	<color name="summer">#00a300</color>
+	<color name="fall">#e3a21a</color>
+	<color name="winter">#2d89ef</color>
+	<color name="spring">#9f00a7</color>
+	<color name ="blue">#eff4ff</color>
 </resources>
