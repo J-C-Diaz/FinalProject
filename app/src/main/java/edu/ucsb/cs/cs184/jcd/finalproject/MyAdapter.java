@@ -1,4 +1,4 @@
-package cs.cs184.e_khurelbaatarEventCalendar;
+package edu.ucsb.cs.cs184.jcd.finalproject;
 
 import android.app.Dialog;
 import android.content.Context;

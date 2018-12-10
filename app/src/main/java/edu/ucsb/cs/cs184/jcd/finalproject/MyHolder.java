@@ -1,4 +1,4 @@
-package cs.cs184.e_khurelbaatarEventCalendar;
+package edu.ucsb.cs.cs184.jcd.finalproject;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

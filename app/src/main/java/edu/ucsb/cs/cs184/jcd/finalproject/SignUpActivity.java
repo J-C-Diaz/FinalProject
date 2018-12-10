@@ -115,7 +115,7 @@ public class SignUpActivity extends Activity implements AdapterView.OnItemSelect
                             Toast.makeText(getApplicationContext(), "Success!", Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
                             addUserData(user.getUid(),mEmailView.getText().toString(),Integer.toString(spinnerSelection));
-                            startActivity(new Intent(SignUpActivity.this, CalendarActivity.class));
+                            startActivity(new Intent(SignUpActivity.this, MainActivity.class));
                             //updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
