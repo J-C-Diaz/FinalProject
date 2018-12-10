@@ -97,9 +97,13 @@ public class SignUpActivity extends Activity implements AdapterView.OnItemSelect
 
         email = mEmailView.getText().toString();
         password = mPasswordView.getText().toString();
-        if ((email == "") || (password == "")){
+        Log.d(TAG, "EMAIL and Password " + email +"space"+ password);
+        if ((email.matches("")) || (password.matches(""))){
             Toast.makeText(getApplicationContext(), "Email or Password is blank", Toast.LENGTH_LONG).show();
+            return;
+
         }
+
         Log.d(TAG, "createAccount:" + email);
 
 
