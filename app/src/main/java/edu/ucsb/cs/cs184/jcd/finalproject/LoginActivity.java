@@ -182,6 +182,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             //showProgressDialog();
 
+            if ((email.matches("")) || (password.matches(""))){
+                Toast.makeText(getApplicationContext(), "Email or Password is blank", Toast.LENGTH_LONG).show();
+                return;
+
+            }
+
             // [START sign_in_with_email]
             mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -217,7 +223,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
-        return password.length() > 4;
+        return password.length() > 0;//changed from 4
     }
 
     /**
