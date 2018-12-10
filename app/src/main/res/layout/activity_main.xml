@@ -60,6 +60,15 @@
 		app:srcCompat="@android:drawable/ic_input_add"
 		android:tint="@android:color/white"/>
 
+	<TextView
+		android:id="@+id/textView4"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Sign Out"
+		android:onClick="signOut"
+		app:layout_constraintTop_toTopOf="@id/fab"
+		app:layout_constraintBottom_toBottomOf="@id/fab"
+		app:layout_constraintLeft_toLeftOf="@id/calendar_view"/>
 
 
 </android.support.constraint.ConstraintLayout>

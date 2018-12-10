@@ -4,6 +4,7 @@ import android.app.FragmentManager;
 //import android.support.v4.app.FragmentManager;
 //import android.support.v4.app.FragmentTransaction;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -289,5 +290,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	@Override
 	public void onFragmentInteraction(Uri uri){
 
+	}
+
+	public void signOut(View view) {
+		FirebaseAuth.getInstance().signOut();
+		startActivity(new Intent(MainActivity.this, LoginActivity.class));
 	}
 }
