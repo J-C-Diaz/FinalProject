@@ -26,6 +26,7 @@ public class Event {
 
 }
 
+
 class Time{
     public String start;
     public String finish;
