@@ -1,0 +1,59 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:weightSum="1"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+	android:background="@android:color/white"
+    tools:context=".MainActivity">
+
+	<TextView
+		android:id="@+id/textView3"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Currently Displaying"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		android:layout_marginTop="16dp"
+		android:textSize="20dp"
+		android:textColor="@color/colorPrimaryDark"
+		/>
+
+	<Spinner
+		android:id="@+id/spinner2"
+		android:layout_width="30dp"
+		android:layout_height="30dp"
+		app:layout_constraintLeft_toRightOf="@id/textView3"
+		app:layout_constraintBottom_toBottomOf="@id/textView3"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="@id/textView3"/>
+
+	<edu.ucsb.cs.cs184.jcd.finalproject.CalendarView
+		app:layout_constraintTop_toBottomOf="@id/textView3"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		android:id="@+id/calendar_view"
+		android:layout_width="match_parent"
+		android:layout_height="327dp"
+		android:layout_marginTop="16dp"/>
+
+	<android.support.design.widget.FloatingActionButton
+		android:id="@+id/fab"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="bottom|end"
+		android:layout_margin="@dimen/fab_margin"
+		app:layout_constraintRight_toRightOf="@id/calendar_view"
+		app:layout_constraintTop_toBottomOf="@id/calendar_view"
+		app:srcCompat="@android:drawable/ic_input_add"
+		android:tint="@android:color/white"/>
+
+
+
+</android.support.constraint.ConstraintLayout>
