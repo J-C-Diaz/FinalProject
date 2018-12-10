@@ -1,6 +1,10 @@
 package edu.ucsb.cs.cs184.jcd.finalproject;;
 
 import android.app.FragmentManager;
+//import android.support.v4.app.FragmentManager;
+//import android.support.v4.app.FragmentTransaction;
+import android.app.FragmentTransaction;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -28,7 +32,7 @@ import java.util.Date;
 import java.util.HashSet;
 
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, AddEventFrag.OnFragmentInteractionListener {
 	Calendar mCalendar;
 	private FirebaseAuth mAuth;
 	FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
@@ -60,9 +64,20 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
+				Toast myToast = Toast.makeText(getApplicationContext(),
+						"Starting Add Event Fragment",
+						Toast.LENGTH_SHORT);
+				myToast.show();
+				AddEventFrag eFrag = AddEventFrag.newInstance();
+				eFrag.setArguments(getIntent().getExtras());
+				View view1 = findViewById(R.id.childMain);
+				view1.setVisibility(View.INVISIBLE);
+				//FragmentManager fragManager = getSupportFragmentManager();
+				FragmentTransaction transaction = fm.beginTransaction();
+				transaction.replace(R.id.mainFrame, eFrag).commit();
+
+
+			}
         });
 
 
@@ -170,6 +185,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	public void onNothingSelected(AdapterView<?> parent) {
 		// Hide SignUpButton
+
+	}
+
+	@Override
+	public void onFragmentInteraction(Uri uri){
 
 	}
 }
