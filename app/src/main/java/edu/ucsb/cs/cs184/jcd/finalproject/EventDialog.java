@@ -1,5 +1,4 @@
-package edu.ucsb.cs.cs184.jcd.finalproject;;
-
+package edu.ucsb.cs.cs184.jcd.finalproject;
 
 import android.app.Dialog;
 import android.app.DialogFragment;

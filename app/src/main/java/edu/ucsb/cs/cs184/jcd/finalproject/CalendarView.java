@@ -149,21 +149,6 @@ public class CalendarView extends LinearLayout
 			}
 		});
 
-		// long-pressing a day
-		grid.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener()
-		{
-
-			@Override
-			public boolean onItemLongClick(AdapterView<?> view, View cell, int position, long id)
-			{
-				// handle long-press
-				if (eventHandler == null)
-					return false;
-
-				eventHandler.onDayLongPress((Date)view.getItemAtPosition(position));
-				return true;
-			}
-		});
 	}
 
 	/**
@@ -209,6 +194,8 @@ public class CalendarView extends LinearLayout
 		int color = rainbow[season];
 
 		header.setBackgroundColor(getResources().getColor(color));
+
+
 	}
 
 
@@ -231,7 +218,7 @@ public class CalendarView extends LinearLayout
 		public View getView(int position, View view, ViewGroup parent)
 		{
 			// day in question
-			Date date = getItem(position);
+			final Date date = getItem(position);
 			int day = date.getDate();
 			int month = date.getMonth();
 			int year = date.getYear();
@@ -250,7 +237,7 @@ public class CalendarView extends LinearLayout
 			view.setBackgroundResource(0);
 			if (eventDays != null)
 			{
-				for (Date eventDate : eventDays)
+				for (final Date eventDate : eventDays)
 				{
 					if (eventDate.getDate() == day &&
 							eventDate.getMonth() == month &&
@@ -258,9 +245,20 @@ public class CalendarView extends LinearLayout
 					{
 						// mark this day for event
 						view.setBackgroundResource(R.drawable.reminder);
+
+                        view.setOnClickListener(new OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                if(eventHandler == null)
+                                    return;
+
+                                eventHandler.onDayLongPress(eventDate);
+                            }
+                        });
+                    }
                         break;
 					}
-				}
+
 			}
 
 			// clear styling
