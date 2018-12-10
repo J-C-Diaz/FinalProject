@@ -1,4 +1,4 @@
-package edu.ucsb.cs.cs184.sonam.firebasetester;
+package edu.ucsb.cs.cs184.jcd.finalproject;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -7,8 +7,8 @@ import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
+import android.app.DialogFragment;
+import android.app.Fragment;
 import android.support.v4.content.LocalBroadcastManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -137,6 +137,7 @@ public class AddEventFrag extends Fragment {
                 }
                 else{
                     submitEvent();
+                    startActivity(new Intent(getContext(), MainActivity.class));
                 }
             }
         });

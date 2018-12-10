@@ -102,7 +102,7 @@
 
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/startTimeText"
-                android:layout_width="199dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:focusable="false"
                 android:hint="start"

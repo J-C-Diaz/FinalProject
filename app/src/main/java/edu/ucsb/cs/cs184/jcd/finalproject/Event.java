@@ -1,4 +1,4 @@
-package edu.ucsb.cs.cs184.sonam.firebasetester;
+package edu.ucsb.cs.cs184.jcd.finalproject;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
